@@ -1,0 +1,23 @@
+.easyui-layout #p {
+    width: 500px;
+    height: 100px;
+    text-align: right;
+    padding-top: 39px;
+    padding-right: 8px;
+}
+
+.easyui-layout #layout_west {
+    width: 300px;
+}
+
+#menu_content h1 {
+    color: rgb(238, 73, 224);
+}
+
+#menu_content ul li {
+    list-style-type: cjk-ideographic;
+}
+#menu_content ul li a{
+    font-size: 2em;
+    color: blue;
+}

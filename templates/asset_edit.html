@@ -1,0 +1,67 @@
+<html>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Edit Page</title>
+
+    <!--引用Jquery函式庫  -->
+    <script src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+    <!--引用EasyUI Jquery函式庫  -->
+    <script src="{% static 'js/jquery.easyui.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/themes/default/easyui.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/themes/icon.css' %}">
+
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+
+</head>
+<body>
+    <h2>目前正在編輯 {{ ast_list.no }} </h2>
+    <p>請依序填寫對應的資料；感謝您的配合</p>
+    <div class="col-md-5">
+        <div class="content-box-large">
+            <div class="panel-body">
+                <form class="form-horizontal" role="form" action="/ast_edit/?no={{ ast_list.no }}" method="post">
+                    <div class="form-group">
+                        <label for="input1" class="col-sm-2 control-label">資產名稱</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" placeholder="{{ast_list.name}}" aria-label="readonly input example" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input1" class="col-sm-2 control-label">規格型式</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" placeholder="{{ast_list.style}}" aria-label="readonly input example" readonly>
+                        </div>
+                    </div>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="input1" class="col-sm-2 control-label">放置地點</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" id="input1" placeholder="放置地點" name="edit_put_place" value="{{ ast_list.put_place }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">財產部門</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" id="input2" placeholder="財產部門" name="edit_dept" value="{{ ast_list.dept }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">員編(保管人)</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" id="input2" placeholder="員編(保管人)" name="edit_syid" value="{{ ast_list.syid }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                            <button type="submit" formmethod="get" formaction="../ast_list/" class="btn btn-default">返回</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

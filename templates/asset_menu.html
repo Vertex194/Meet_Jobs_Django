@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>財產管理系統</title>
+    {% load static %}
+    <!--引用Jquery函式庫  -->
+    <script src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+
+    <!--引用EasyUI Jquery函式庫  -->
+    <script src="{% static 'js/jquery.easyui.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/themes/default/easyui.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/themes/icon.css' %}">
+
+    <script src="{% static 'css/cms.css' %}"></script>
+</head>
+
+<body class="easyui-layout">
+    <div data-options="region:'north',title:'歡迎使用財產管理系統網頁板',split:false" style="height:100px">
+        請由此進行登入操作==><a href="login.html">登入</a>
+    </div>
+    <div data-options="region:'west'" style="width:350px" >
+        <div class="easyui-panel">
+            <ul class="easyui-tree">
+                <li>
+                    <span>申請單管理</span>
+                    <ul>
+                        <li data-options="state:'closed'">
+                            <span>移動申請</span>
+                            <ul>
+                                <li>
+                                    <span>財產移動申請單</span>
+                                </li>
+                                <li>
+                                    <span>非消耗品移動申請單</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li data-options="state:'closed'">
+                            <span>報廢申請</span>
+                            <ul>
+                                <li>
+                                    <span>財產報廢申請單</span>
+                                </li>
+                                <li>
+                                    <span>非消耗品報廢申請單</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>查詢異動作業</span>
+                    <ul>
+                        <li>
+                            <a href="../ast_list/"><span>財產查詢</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div data-options="region:'center'" >
+        <div class="easyui-tabs">
+            <div data-options="iconCls:'icon-tip'" style="padding:10px">
+                <div title=" " style="padding:10px" data-options="iconCls:'icon-tip'">
+                    <div class="easyui-panel" title="佈告欄" style="width:768px;height:480px;">
+                        <div style="width:auto;height: auto;" id="menu_content">
+                            <h1>遠端遙控軟體 AnyDesk</h1>
+                            <h2>強大的遠端桌面</h2>
+                            <blockquote>
+                                在遠端桌面軟件的幫助下，您可以連接其他地方的設備，就像本地設備一樣。<br>
+                                遠端桌面可用於遠端支援和遠端維護，以及在線操作、遠端工作等。<br>
+                                AnyDesk為您提供各種考慮周到的功能，為您提供最好的用戶體驗。<br>
+                                下載完成後，直接執行<br>
+                                並告知你的ID(隨機數字共9碼)；即可遠端教導系統使用方式!
+                            </blockquote>
+                            <h2>遠端工作</h2>
+                            <blockquote>
+                                讓您的員工可以在任何地點遠端辦公。<br>
+                                使用AnyDesk，連接文件和設備完全不是問題。<br>
+                                即使是低帶寬，AnyDesk工作也非常流暢和高效。<br>
+                            </blockquote>
+                            <ul>
+                                <li><a href="https://www.lungmei.com.tw/tw" target="_blank">大成鋼隆美家居室內設計官網</a></li>
+                                <li><a href="https://anydesk.com/zht" target="_blank">本機下載AnyDesk(Version:7.0)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div id="mm">
+                        <div data-options="name:'all',iconCls:'icon-ok'">全部</div>
+                        <div data-options="name:'num'">財產編號</div>
+                        <div data-options="name:'num'">財產名稱</div>
+                        <div data-options="name:'num'">財產類型</div>
+                    </div>
+                    <div class="easyui-panel" title="Searching" style="width: 320px; height: 100px;">
+                        <div>
+                            <input class="easyui-searchbox" data-options="prompt:'請輸入關鍵字',menu:'#mm'",style="width: 75%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
